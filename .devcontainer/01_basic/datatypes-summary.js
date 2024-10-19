@@ -33,3 +33,31 @@ const myFunction = function(){
 }
 
 console.log(typeof myFunction);
+
+
+//+++++++++++++++++++++++++++++++++++++++++++
+
+
+// Stack (Primitive), Heap (Non-Primitive)
+
+let  myYoutubename ="mubin467com"
+
+let anothername = myYoutubename
+anothername = "my love ramika" 
+
+console.log(myYoutubename);//mubin467com//
+console.log(anothername);//my love ramika//
+
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "mubin@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
+
+//mubin@google.com//
