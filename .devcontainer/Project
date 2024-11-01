@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Color Flipper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Variables */
+    :root {
+      --primary-dark: hsl(205, 86%, 17%);
+      --primary: hsl(205, 78%, 60%);
+      --primary-light: hsl(205, 90%, 88%);
+      --background: hsl(210, 36%, 96%);
+      --text-color: hsl(209, 61%, 16%);
+      --text-light: hsl(210, 22%, 49%);
+      --white: #fff;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease-in-out;
+      --font-family: 'Roboto', sans-serif;
+    }
+
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-family);
+      background-color: var(--background);
+      color: var(--text-color);
+      line-height: 1.6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    h1, h2 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      color: var(--primary);
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    /* Container Styling */
+    .container {
+      text-align: center;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      background: var(--white);
+      box-shadow: var(--box-shadow);
+      width: 100%;
+      max-width: 400px;
+    }
+    .color-display {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    /* Button Styling */
+    .btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      color: var(--white);
+      background-color: var(--primary);
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-block;
+      margin-top: 1rem;
+      text-transform: uppercase;
+    }
+    .btn:hover {
+      background-color: var(--primary-dark);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Beautiful Color Flipper</h1>
+    <h2>Beautiful Background Color: <span class="color-display" id="color">#f1f5f8</span></h2>
+    <button class="btn" id="btn">Click on me</button>
+  </div>
+
+  <script>
+    // Color Array with HEX values
+    const colors = ["#f1f5f8", "#f15025", "#e91e63", "#00bcd4", "#4caf50", "#ff9800"];
+    
+    // Get elements
+    const btn = document.getElementById("btn");
+    const colorDisplay = document.getElementById("color");
+
+    // Event Listener for Button Click
+    btn.addEventListener("click", function() {
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+      colorDisplay.textContent = randomColor;
+    });
+  </script>
+</body>
+</html>
